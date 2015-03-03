@@ -10,11 +10,20 @@ resources: 3
 
 |Section                           |
 |----------------------------------|
+|[Quick Note](#quick-note)         |
 |[Objectives](#objectives)         |
 |[ActiveRecord](#activerecord)     |
 |[Example](#example)               |
 |[Instructions](#instructions)     |
 |[Resources](#resources)           |
+
+## Quick Note
+
+This lab will run migrations on the `halloween` database so run the following command from your terminal:
+
+```
+> createdb halloween
+```
 
 ## Objectives
 

@@ -1,5 +1,3 @@
-require_relative 'spec_helper'
-
 describe "Costume" do
 
   it "has a name" do
