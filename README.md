@@ -25,8 +25,6 @@ This lab will run migrations on the `halloween` database so run the following co
 > createdb halloween
 ```
 
-Every time you create a table, alter a table, etc. by making a migration, remember to run `rake db:migrate`.
-
 ## Objectives
 
 ![jack o lantern emoji](http://www.emoji-cheat-sheet.com/graphics/emojis/jack_o_lantern.png) ![dog ghost emoji](http://www.emoji-cheat-sheet.com/graphics/emojis/ghost.png) ![jack o lantern emoji](http://www.emoji-cheat-sheet.com/graphics/emojis/jack_o_lantern.png)
@@ -250,4 +248,5 @@ You will only be altering code in six files, the three files in the `models` fol
 * [ActiveRecord Migrations](http://guides.rubyonrails.org/migrations.html)
   * Just look at the code for the example migrations
 * [Creating Active Record Models](http://guides.rubyonrails.org/active_record_basics.html#creating-active-record-models) 
+* [Timestamps](http://api.rubyonrails.org/classes/ActiveRecord/Timestamp.html)creating-active-record-models) 
 * [Timestamps](http://api.rubyonrails.org/classes/ActiveRecord/Timestamp.html)
