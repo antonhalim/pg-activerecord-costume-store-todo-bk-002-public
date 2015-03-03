@@ -1,22 +1,20 @@
-task :environment do
-  ENV["ACTIVE_RECORD_ENV"] ||= "development"
-  require_relative './config/environment'
-end
+require_relative 'config/environment.rb'
 
 namespace :db do
-  task :migrate => :environment do
-    DB.tables.each do |table|
-      DB.execute("DROP TABLE #{table}")
-    end
 
-    Dir[File.join(File.dirname(__FILE__), "db/migrations", "*.rb")].each do |f| 
-      require f
-      migration = Kernel.const_get(f.split("/").last.split(".rb").first.gsub(/\d+/, "").split("_").collect{|w| w.strip.capitalize}.join())
-      migration.migrate(:up)
-    end
+  desc "Migrate the db"
+  task :migrate do
+    connection_details = YAML::load(File.open('config/database.yml'))
+    ActiveRecord::Base.establish_connection(connection_details)
+    ActiveRecord::Migrator.migrate("db/migrations/")
   end
-end
 
-task :console => "db:migrate" do
-  Pry.start
+  desc "drop and recreate the db"
+  task :reset => [:drop, :migrate]
+
+  desc "drop the db"
+  task :drop do
+    connection_details = YAML::load(File.open('config/database.yml'))
+    File.delete(connection_details.fetch('database')) if File.exist?(connection_details.fetch('database'))
+  end
 end

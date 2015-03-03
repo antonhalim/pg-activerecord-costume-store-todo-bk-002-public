@@ -25,6 +25,8 @@ This lab will run migrations on the `halloween` database so run the following co
 > createdb halloween
 ```
 
+Every time you create a table, alter a table, etc. by making a migration, remember to run `rake db:migrate`.
+
 ## Objectives
 
 ![jack o lantern emoji](http://www.emoji-cheat-sheet.com/graphics/emojis/jack_o_lantern.png) ![dog ghost emoji](http://www.emoji-cheat-sheet.com/graphics/emojis/ghost.png) ![jack o lantern emoji](http://www.emoji-cheat-sheet.com/graphics/emojis/jack_o_lantern.png)
