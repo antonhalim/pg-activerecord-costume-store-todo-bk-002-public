@@ -3,11 +3,18 @@ require 'rake'
 load './Rakefile'
 
 RSpec.configure do |config|
-  config.after(:each) do
-    db = PG::Connection.open(:dbname => 'halloween', host: 'localhost')
-    db.exec('DROP TABLE IF EXISTS costumes');
-    db.exec('DROP TABLE IF EXISTS costume_stores');
-    db.exec('DROP TABLE IF EXISTS haunted_houses');
+  config.before do
+    run_rake_task('db:migrate')
+  end
+  config.after do
+    run_rake_task('db:drop')
+  end
+end
+
+def run_rake_task(task)
+  RAKE_APP[task].invoke
+  if task == 'db:migrate'
+    RAKE_APP[task].reenable
   end
 end
 
