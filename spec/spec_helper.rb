@@ -5,7 +5,9 @@ load './Rakefile'
 RSpec.configure do |config|
   config.after(:each) do
     db = PG::Connection.open(:dbname => 'halloween', host: 'localhost')
-    db.exec('DROP TABLE IF EXISTS bears');
+    db.exec('DROP TABLE IF EXISTS costumes');
+    db.exec('DROP TABLE IF EXISTS costume_stores');
+    db.exec('DROP TABLE IF EXISTS haunted_houses');
   end
 end
 
