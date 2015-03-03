@@ -3,7 +3,10 @@ require 'rake'
 load './Rakefile'
 
 RSpec.configure do |config|
-  # config here
+  config.after(:each) do
+    db = PG::Connection.open(:dbname => 'halloween', host: 'localhost')
+    db.exec('DROP TABLE IF EXISTS bears');
+  end
 end
 
 def get_opening_time
