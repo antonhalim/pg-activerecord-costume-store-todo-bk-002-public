@@ -247,5 +247,5 @@ You will only be altering code in six files, the three files in the `models` fol
 ## Resources
 * [ActiveRecord Migrations](http://guides.rubyonrails.org/migrations.html)
 * [Creating Active Record Models](http://guides.rubyonrails.org/active_record_basics.html#creating-active-record-models) 
-* [Timestamps](http://api.rubyonrails.org/classes/ActiveRecord/Timestamp.html)creating-active-record-models) 
+* [Timestamps](http://api.rubyonrails.org/classes/ActiveRecord/Timestamp.html)
 * [Timestamps](http://api.rubyonrails.org/classes/ActiveRecord/Timestamp.html)
